@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Kiosk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .menu {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 20px;
+        }
+
+        .cart {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart p {
+            font-weight: bold;
+        }
+
+        .order-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #checkout-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>Menu</h1>
+        <ul>
+            <li>
+                <h3>Peproni Pizza</h3>
+                <p>$ 10.0</p>
+                <button class="order-btn">Order</button>
+            </li>
+            <li>
+                <h3>Panner Pizza</h3>
+                <p>$ 7.50</p>
+                <button class="order-btn">Order</button>
+            </li>
+            <li>
+                <h3>Corn and Cheese Pizza</h3>
+                <p>$ 5.00</p>
+                <button class="order-btn">Order</button>
+            </li>
+            <li>
+                <h3>Chicken Pizza</h3>
+                <p>$ 6.50</p>
+                <button class="order-btn">Order</button>
+            </li>
+            <li>
+                <h3>Chicken Schezwan Momos Pizza</h3>
+                <p>$ 12.50</p>
+                <button class="order-btn">Order</button>
+            </li>
+            <li>
+                <h3>Chicken & cheese Pizza</h3>
+                <p>$ 11.00</p>
+                <button class="order-btn">Order</button>
+            </li><!-- Add more menu items here -->
+        </ul>
+    </div>
+
+    <div class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </ul>
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <a href="payment.html" class="payment-button" onclick="changeButtonText(this)">checkoutBtn</a>
+    </div>
+
+    <script>
+        const menuItems = document.querySelectorAll('.order-btn');
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+
+        let total = 0;
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const menuItem = item.parentElement;
+                const itemName = menuItem.querySelector('h3').textContent;
+                const itemPrice = parseFloat(menuItem.querySelector('p').textContent.replace('$', ''));
+
+                const cartItem = document.createElement('li');
+                cartItem.textContent = `${itemName} - $${itemPrice.toFixed(2)}`;
+                cartItems.appendChild(cartItem);
+
+                total += itemPrice;
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            });
+        });
+
+        checkoutBtn.addEventListener('click', () => {
+            alert(`Total amount: $${total.toFixed(2)}. Thank you for your order!`);
+            // You can implement actual checkout logic here.
+        });
+    </script>
+</body>
+</html>

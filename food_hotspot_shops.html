@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Selection Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        .shop-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .shop-card {
+            width: calc(33.33% - 20px);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+        .shop-card:hover {
+            transform: scale(1.05);
+        }
+        .shop-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .shop-name {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        .shop-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out;
+            font-size: 1rem;
+        }
+        .shop-button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore Delicious Options</h1>
+        <div class="shop-list">
+            <!-- Shop 1 -->
+            <div class="shop-card">
+                <div class="shop-name">MC Donald's</div>
+                <a href="shop1.html" class="shop-button" onclick="changeButtonText(this)">Visit Menu</a>
+            </div>
+            
+            <!-- Shop 2 -->
+            <div class="shop-card">
+                <div class="shop-name">AMUL</div>
+                <a href="shop2.html" class="shop-button" onclick="changeButtonText(this)">Visit Menu</a>
+            </div>
+            
+            <!-- Add more shop cards here -->
+            <!-- Shop 3 -->
+            <div class="shop-card">
+                <div class="shop-name">WOW MOMOS</div>
+                <a href="shop3.html" class="shop-button" onclick="changeButtonText(this)">Visit Menu</a>
+            </div>
+            
+            <!-- Shop 4 -->
+            <div class="shop-card">
+                <div class="shop-name">DOMINOS</div>
+                <a href="shop4.html" class="shop-button" onclick="changeButtonText(this)">Visit Menu</a>
+            </div>
+            
+            <!-- Shop 5 -->
+            <div class="shop-card">
+                <div class="shop-name">PIZZA HUT</div>
+                <a href="shop5.html" class="shop-button" onclick="changeButtonText(this)">Visit Menu</a>
+            </div>
+            
+            <!-- Shop 6 -->
+            <div class="shop-card">
+                <div class="shop-name">BURGER KING</div>
+                <a href="shop6.html" class="shop-button" onclick="changeButtonText(this)">Visit Menu</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function changeButtonText(button) {
+            button.textContent = "Added to Cart";
+            button.style.backgroundColor = "#4caf50"; // Change to a success color
+        }
+    </script>
+</body>
+</html>

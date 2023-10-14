@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment QR Code Generator</title>
+</head>
+<body>
+    <h1>Payment QR Code Generator</h1>
+    <label for="paymentData">Enter Payment Data:</label>
+    <input type="text" id="paymentData" placeholder="Payment data..." style="width: 300px;">
+    <button onclick="generateQRCode()">Generate QR Code</button>
+    <div id="qrcode"></div>
+
+    <script>
+        function generateQRCode() {
+            const paymentData = document.getElementById("paymentData").value;
+            const qrcodeContainer = document.getElementById("qrcode");
+
+            // Create an image element with the QR code source from qr-official
+            const qrCodeImage = document.createElement("img");
+            qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(paymentData)}`;
+            qrcodeContainer.innerHTML = "";
+            qrcodeContainer.appendChild(qrCodeImage);
+        }
+    </script>
+</body>
+</html>

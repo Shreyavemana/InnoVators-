@@ -1,1 +1,3 @@
-# InnoVators-
+# InnoVators- "INTRODUCTION OF VIRTUAL FOOD COURTS - KIOSK"
+
+Our proposition introduces "Virtual Food Courts" at IIIT Nagpur, employing digital kiosks to elevate the dining experience. With user-friendly touch-screen interfaces, these kiosks streamline order placement, minimizing wait times. Strategically positioned in notable food hubs, they revolutionize traditional dining, offering a more accessible approach. Grounded in student understanding, we suggest the incorporation of food trucks, expanding culinary choices. Seamlessly linked to kiosks, orders are directed to the selected food truck. The kiosk interface provides a straightforward option for choosing between vegetarian and non-vegetarian preferences, ensuring an all-encompassing dining experience. Harnessing Web Development, Deep Learning, and Machine Learning, our strategy tackles logistical challenges, enriching the overall campus dining milieu.
